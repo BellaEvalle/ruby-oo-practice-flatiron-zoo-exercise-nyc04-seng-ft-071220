@@ -1,6 +1,6 @@
 class Zoo
 
-  attr_accessor :name, :loation
+  attr_accessor :name, :location
 
   @@all = []
 
@@ -27,5 +27,11 @@ class Zoo
     end
     mapped_array.uniq 
   end 
+  
+  def find_by_species(species)
+    Animal.all.select do |animal|
+      animal.zoo == species
+    end
+  end
   
 end
